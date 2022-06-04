@@ -7,7 +7,6 @@
 <link href="fonts.googleapis.com/css21189.css?family=Ubuntu:wght@400;700&amp;display=swap" rel="stylesheet">
 <script src="cdn.jsdelivr.net/npm/sweetalert2%4011.0.19/dist/sweetalert2.all.min.js"></script>
 <link href="valentine.likeadream.repl.co/style.css" rel="stylesheet" type="text/css" />
-<script src="valentine.likeadream.repl.co/script.js"></script>
 
 <head>
     <!-- 
@@ -54,12 +53,12 @@ TikTok: rayyarr_
             document.getElementById('Content').style.animation = "kont 3s infinite";
         }
 
-        function downDiv() {
-            ketik();
-            document.getElementById('Content').style.opacity = "1";
-            document.getElementById('Content').style.margin = "0";
-            document.getElementById('Content').style.animation = "kont 3s infinite";
-        }
+        // function downDiv() {
+        //     ketik();
+        //     document.getElementById('Content').style.opacity = "1";
+        //     document.getElementById('Content').style.margin = "0";
+        //     document.getElementById('Content').style.animation = "kont 3s infinite";
+        // }
 
         var i = 0,
             text;
@@ -78,7 +77,7 @@ TikTok: rayyarr_
                 setTimeout(ketik, 100);
             }
             if (i == text.length) {
-                document.getElementById("text").innerHTML = text + emotnama;
+                document.getElementById("text").innerHTML = text;
                 ketikk();
             }
         }
@@ -101,7 +100,7 @@ TikTok: rayyarr_
                 setTimeout(ketikkk, 300);
             }
             if (o == text3.length) {
-                document.getElementById("text3").innerHTML = text3 + emotnama2;
+                document.getElementById("text3").innerHTML = text32;
             }
         }
     </script>
@@ -133,12 +132,12 @@ TikTok: rayyarr_
             var {
                 isConfirmed: tanyawal
             } = await swals.fire({
-                title: `Mau isi nama dulu atau langsung aja?`,
+                title: `Mau tau Dewan Ambalan` + '\n' + 'SMK Negeri 2 Kota Mojokerto?',
                 imageUrl: 'https://i.postimg.cc/CKgH8zQN/Whats-App-Image-2022-06-04-at-05-12-29.jpg',
                 imageWidth: 120,
                 imageHeight: 120,
-                cancelButtonText: 'Langsung Aja',
-                confirmButtonText: 'Isi Nama',
+                cancelButtonText: 'TIDAK',
+                confirmButtonText: 'IYA',
                 allowOutsideClick: false,
                 showCancelButton: true,
             });
@@ -146,9 +145,7 @@ TikTok: rayyarr_
                 mulai();
                 play();
             } else {
-                nama = 'Citra';
-                pilihwarna();
-                play();
+                history.go(-1)
             }
         }
 
@@ -175,8 +172,6 @@ TikTok: rayyarr_
 
         async function pilihwarna() {
             text = "Dear, " + nama + ".    ";
-            emotnama = "&#10084;";
-            emotnama2 = "";
             var {
                 isConfirmed: tanyadua
             } = await swals.fire({
