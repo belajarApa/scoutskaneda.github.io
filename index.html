@@ -29,6 +29,10 @@ TikTok: rayyarr_
                 <p id="text"></p>
                 <p id="text2"></p>
                 <p id="text3"></p>
+                <div class="back" id="tampil" style="display: none;">
+                    <button class="kembali" onclick="pilihwarna()">kembali</button>
+                    <button class="keluar" onclick="history.back()">keluar</button>
+                </div>
             </blockquote>
         </div>
     </div>
@@ -52,13 +56,6 @@ TikTok: rayyarr_
             document.getElementById('Content').style.margin = "0";
             document.getElementById('Content').style.animation = "kont 3s infinite";
         }
-
-        // function downDiv() {
-        //     ketik();
-        //     document.getElementById('Content').style.opacity = "1";
-        //     document.getElementById('Content').style.margin = "0";
-        //     document.getElementById('Content').style.animation = "kont 3s infinite";
-        // }
 
         var i = 0,
             text;
@@ -100,6 +97,7 @@ TikTok: rayyarr_
                 setTimeout(ketikkk, 300);
             }
             if (o == text3.length) {
+                document.getElementById("tampil").style.display = "inline-block";
                 document.getElementById("text3").innerHTML = text32;
             }
         }
@@ -133,11 +131,11 @@ TikTok: rayyarr_
                 isConfirmed: tanyawal
             } = await swals.fire({
                 title: `Mau tau Dewan Ambalan` + '\n' + 'SMK Negeri 2 Kota Mojokerto?',
-                imageUrl: 'https://i.postimg.cc/CKgH8zQN/Whats-App-Image-2022-06-04-at-05-12-29.jpg',
+                imageUrl: 'https://i.postimg.cc/PJG0YDP2/logosmk2.png',
                 imageWidth: 120,
                 imageHeight: 120,
-                cancelButtonText: 'TIDAK',
-                confirmButtonText: 'IYA',
+                cancelButtonText: 'Keluar',
+                confirmButtonText: 'Lanjut',
                 allowOutsideClick: false,
                 showCancelButton: true,
             });
@@ -153,7 +151,7 @@ TikTok: rayyarr_
             var {
                 value: nama
             } = await swals.fire({
-                title: 'Masukin nama kamu',
+                title: 'Masukin nama anda',
                 input: 'text',
                 imageUrl: 'https://i.postimg.cc/vDFQZzhM/yyy.gif',
                 imageWidth: 120,
@@ -171,11 +169,11 @@ TikTok: rayyarr_
         }
 
         async function pilihwarna() {
-            text = "Dear, " + nama + ".    ";
+            text = "";
             var {
                 isConfirmed: tanyadua
             } = await swals.fire({
-                title: nama + ` mau pilih yang mana nichh?`,
+                title: 'Pilih mana kak ' + nama,
                 imageUrl: 'https://i.postimg.cc/wjjjjvm7/saltobears.gif',
                 imageWidth: 120,
                 imageHeight: 120,
@@ -195,7 +193,7 @@ TikTok: rayyarr_
 
         function kata1() {
             text2 = "Happy Birthday Sayang....udah 15 tahun aja nichh haha, sehat terus ya sayangg, bahagia jugaa, dimudahkan urusannya... " + nama + "!       ";
-            text3 = "Semoga apa yang disemogakan tersemogakann AMIIN,,, HAPPY BIRTHDAY SAYANG<3 " + nama + "!)       ";
+            text3 = "Semoga apa yang disemogakan tersemogakann AMIIN,,, HAPPY BIRTHDAY SAYANG " + nama + "!)       ";
         }
 
         function kata2() {
@@ -209,6 +207,8 @@ TikTok: rayyarr_
                 imageUrl: 'https://i.postimg.cc/02wF21b1/peach-goma.gif',
                 imageWidth: 120,
                 imageHeight: 120,
+                cancelButtonText: 'TIDAK',
+                confirmButtonText: 'IYA',
             });
             showDiv();
         }
