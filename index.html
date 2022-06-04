@@ -1,0 +1,224 @@
+<html>
+<meta charset='UTF-8' />
+<meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport' />
+<meta content='IE=edge' http-equiv='X-UA-Compatible' />
+<link rel="preconnect" href="fonts.googleapis.com/index.html">
+<link rel="preconnect" href="fonts.gstatic.com/index.html" crossorigin>
+<link href="fonts.googleapis.com/css21189.css?family=Ubuntu:wght@400;700&amp;display=swap" rel="stylesheet">
+<script src="cdn.jsdelivr.net/npm/sweetalert2%4011.0.19/dist/sweetalert2.all.min.js"></script>
+<link href="valentine.likeadream.repl.co/style.css" rel="stylesheet" type="text/css" />
+<script src="valentine.likeadream.repl.co/script.js"></script>
+
+<head>
+    <!-- 
+This code was made by Rayya R
+Blog: https://sinkronin.com
+Instagram: rayyarrr
+TikTok: rayyarr_
+-->
+</head>
+
+<body>
+    <div id="bodyblur"><img src="i.postimg.cc/81Q8txjY/IMG-20220214-140104-0187874.jpg" width="100%" height="100%" /></div>
+
+    <!-- Isi Konten -->
+    <div id='Content'>
+        <div class="image"><img src="i.postimg.cc/9WSTqt0C/heart-happy7874.gif" width="130px" height="130px" /></div>
+        <!--<div id="sp1"></div>-->
+        <div>
+            <blockquote>
+                <p id="text"></p>
+                <p id="text2"></p>
+                <p id="text3"></p>
+            </blockquote>
+        </div>
+    </div>
+
+    <script>
+        function nonFo() {
+            document.getElementById('idfoto').style.display = "none";
+        }
+
+        function showFo() {
+            document.getElementById('idfoto').style.display = "block";
+        }
+
+        function nonDiv() {
+            document.getElementById('Content').style.display = "none";
+        }
+
+        function showDiv() {
+            ketik();
+            document.getElementById('Content').style.opacity = "1";
+            document.getElementById('Content').style.margin = "0";
+            document.getElementById('Content').style.animation = "kont 3s infinite";
+        }
+
+        function downDiv() {
+            ketik();
+            document.getElementById('Content').style.opacity = "1";
+            document.getElementById('Content').style.margin = "0";
+            document.getElementById('Content').style.animation = "kont 3s infinite";
+        }
+
+        var i = 0,
+            text;
+        text = "";
+        var u = 0,
+            text2;
+        text2 = "";
+        var o = 0,
+            text3;
+        text3 = "";
+
+        function ketik() {
+            if (i < text.length) {
+                document.getElementById("text").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(ketik, 100);
+            }
+            if (i == text.length) {
+                document.getElementById("text").innerHTML = text + emotnama;
+                ketikk();
+            }
+        }
+
+        function ketikk() {
+            if (u < text2.length) {
+                document.getElementById("text2").innerHTML += text2.charAt(u);
+                u++;
+                setTimeout(ketikk, 200);
+            }
+            if (u == text2.length) {
+                ketikkk();
+            }
+        }
+
+        function ketikkk() {
+            if (o < text3.length) {
+                document.getElementById("text3").innerHTML += text3.charAt(o);
+                o++;
+                setTimeout(ketikkk, 300);
+            }
+            if (o == text3.length) {
+                document.getElementById("text3").innerHTML = text3 + emotnama2;
+            }
+        }
+    </script>
+
+    <script type="text/javascript">
+        //Audio Link MP3
+        function play() {
+            var audio = new
+            Audio('hey.likeadream.repl.co/KandaJanganMarah.mp3');
+            audio.play();
+        }
+
+        const swals = Swal.mixin({
+            allowOutsideClick: false,
+            cancelButtonColor: '#FF0040',
+        });
+        const swalsy = Swal.mixin({
+            confirmButtonText: 'Iya',
+            allowOutsideClick: false,
+        });
+        const swalst = Swal.mixin({
+            allowOutsideClick: false,
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+        });
+
+        async function mulaitanya() {
+            var {
+                isConfirmed: tanyawal
+            } = await swals.fire({
+                title: `Mau isi nama dulu atau langsung aja?`,
+                imageUrl: 'https://i.postimg.cc/CKgH8zQN/Whats-App-Image-2022-06-04-at-05-12-29.jpg',
+                imageWidth: 120,
+                imageHeight: 120,
+                cancelButtonText: 'Langsung Aja',
+                confirmButtonText: 'Isi Nama',
+                allowOutsideClick: false,
+                showCancelButton: true,
+            });
+            if (tanyawal) {
+                mulai();
+                play();
+            } else {
+                nama = 'Citra';
+                pilihwarna();
+                play();
+            }
+        }
+
+        async function mulai() {
+            var {
+                value: nama
+            } = await swals.fire({
+                title: 'Masukin nama kamu',
+                input: 'text',
+                imageUrl: 'https://i.postimg.cc/vDFQZzhM/yyy.gif',
+                imageWidth: 120,
+                imageHeight: 120,
+                allowOutsideClick: false,
+                showCancelButton: false,
+            });
+            if (nama && nama.length < 11) {
+                window.nama = nama;
+                pilihwarna();
+            } else {
+                await swals.fire('Ups!', 'Nama tidak boleh kosong atau lebih dari 10 karakter, ya!');
+                mulai();
+            }
+        }
+
+        async function pilihwarna() {
+            text = "Dear, " + nama + ".    ";
+            emotnama = "&#10084;";
+            emotnama2 = "";
+            var {
+                isConfirmed: tanyadua
+            } = await swals.fire({
+                title: nama + ` mau pilih yang mana nichh?`,
+                imageUrl: 'https://i.postimg.cc/wjjjjvm7/saltobears.gif',
+                imageWidth: 120,
+                imageHeight: 120,
+                confirmButtonText: 'Pertama',
+                cancelButtonText: 'Kedua',
+                allowOutsideClick: false,
+                showCancelButton: true,
+            });
+            if (tanyadua) {
+                kata1();
+                kuis();
+            } else {
+                kata2();
+                kuis();
+            }
+        }
+
+        function kata1() {
+            text2 = "Happy Birthday Sayang....udah 15 tahun aja nichh haha, sehat terus ya sayangg, bahagia jugaa, dimudahkan urusannya... " + nama + "!       ";
+            text3 = "Semoga apa yang disemogakan tersemogakann AMIIN,,, HAPPY BIRTHDAY SAYANG<3 " + nama + "!)       ";
+        }
+
+        function kata2() {
+            text2 = "Maaf ya sayang aku banyak kurangnya, aku susah kmu banggain tapi aku bangga milikin kmu dan tak uasahain yg terbaik untukmu   ";
+            text3 = "Aku masih ndek sini nemenin Citra kok, aku harap kmu bahagia terus sama aku   " + nama + "!       ";
+            document.getElementById('text3').style = "font-weight:700";
+        }
+        async function kuis() {
+            await swalst.fire({
+                title: 'Hai, ' + nama + '!',
+                imageUrl: 'https://i.postimg.cc/02wF21b1/peach-goma.gif',
+                imageWidth: 120,
+                imageHeight: 120,
+            });
+            showDiv();
+        }
+        mulaitanya();
+    </script>
+</body>
+
+</html>
