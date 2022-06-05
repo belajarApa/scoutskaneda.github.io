@@ -120,7 +120,6 @@ blockquote p:first-child {
 }
 
 .content2 {
-    display: block;
     text-align: center;
     width: 100%;
     height: 180px;
@@ -145,10 +144,6 @@ blockquote p:first-child {
     z-index: 1
 }
 
-.content2 {
-    display: none;
-}
-
 #Content {
     animation-name: none;
     animation-duration: 3s;
@@ -162,6 +157,27 @@ blockquote p:first-child {
 }
 
 #Content>* {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    font-size: 17px;
+    color: white
+}
+
+#Content2 {
+    animation-name: none;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    position: relative;
+    opacity: 0;
+    margin-top: 50px;
+    width: 100%;
+    height: 180px;
+    transition: all .3s ease;
+}
+
+#Content2>* {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -201,7 +217,31 @@ blockquote p:first-child {
     cursor: pointer;
 }
 
+.kembali2 {
+    text-align: center;
+    font-size: 12px;
+    border: none;
+    background-color: #7367f0;
+    color: white;
+    border-radius: 5px;
+    width: 4rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
 .keluar {
+    text-align: center;
+    font-size: 12px;
+    border: none;
+    background-color: #ff0040;
+    color: white;
+    border-radius: 5px;
+    width: 4rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+.daftar {
     text-align: center;
     font-size: 12px;
     border: none;

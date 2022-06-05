@@ -21,41 +21,57 @@ TikTok: rayyarr_
     <div id="bodyblur"><img src="i.postimg.cc/81Q8txjY/IMG-20220214-140104-0187874.jpg" width="100%" height="100%" /></div>
 
     <!-- Isi Konten -->
-    <div id='Content'>
-        <div class="image"><img src="i.postimg.cc/9WSTqt0C/heart-happy7874.gif" width="130px" height="130px" /></div>
-        <!--<div id="sp1"></div>-->
+
+    <!-- content-1 -->
+    <div id='Content' style="display:none;">
+        <div class="image"><img src="i.postimg.cc/old-man-pose.gif" width="130px" height="130px" /></div>
         <div>
             <blockquote>
                 <p id="text"></p>
                 <p id="text2"></p>
                 <p id="text3"></p>
-                <div class="back" id="tampil" style="display: inline;">
-                    <button class="kembali" onclick="coba()">kembali</button>
+                <div class="back" id="tampil" style="display: none;">
+                    <button class="kembali" onclick="pilihwarna()">kembali</button>
                     <button class="keluar" onclick="close_window();return false;">keluar</button>
                 </div>
             </blockquote>
         </div>
     </div>
+    <!-- content-2 -->
+    <div id='Content2' style="display:none;">
+        <div class="image"><img src="i.postimg.cc/tkthao219-bubududu.gif" width="130px" height="130px" /></div>
+        <div>
+            <blockquote>
+                <p id="text4"></p>
+                <p id="text5"></p>
+                <p id="text6"></p>
+                <div class="back" id="tampil2" style="display: none;">
+                    <button class="kembali2" onclick="pilihwarna();return false;">kembali</button>
+                    <button class="daftar" onclick="pendaftaran()">Daftar</button>
+                </div>
+            </blockquote>
+        </div>
+    </div>
+    <!-- Akhir kontent -->
+
+
+
+
+
+
 
     <script>
-        function nonFo() {
-            document.getElementById('idfoto').style.display = "none";
-        }
+        // function nonFo() {
+        //     document.getElementById('idfoto').style.display = "none";
+        // }
 
-        function showFo() {
-            document.getElementById('idfoto').style.display = "block";
-        }
+        // function showFo() {
+        //     document.getElementById('idfoto').style.display = "block";
+        // }
 
-        function nonDiv() {
-            document.getElementById('Content').style.display = "none";
-        }
-
-        function showDiv() {
-            ketik();
-            document.getElementById('Content').style.opacity = "1";
-            document.getElementById('Content').style.margin = "0";
-            document.getElementById('Content').style.animation = "kont 3s infinite";
-        }
+        // function nonDiv() {
+        //     document.getElementById('Content').style.display = "none";
+        // }
 
         function close_window() {
             if (confirm("Yakin ingin keluar?")) {
@@ -73,6 +89,31 @@ TikTok: rayyarr_
             }
         }
 
+        function pendaftaran() {
+            window.location = "https://wa.me/6281553442353";
+        }
+
+        // akhiran-keluar
+
+        function showDiv() {
+            document.getElementById('Content2').style.display = "none";
+            document.getElementById('Content').style.display = "inline-block";
+            ketik();
+            document.getElementById('Content').style.opacity = "1";
+            document.getElementById('Content').style.margin = "0";
+            document.getElementById('Content').style.animation = "kont 3s infinite";
+        }
+
+        function showDiv2() {
+            document.getElementById('Content').style.display = "none";
+            document.getElementById('Content2').style.display = "inline-block";
+            ketik2();
+            document.getElementById('Content2').style.opacity = "1";
+            document.getElementById('Content2').style.margin = "0";
+            document.getElementById('Content2').style.animation = "kont 3s infinite";
+        }
+
+        // tampil-1
         var i = 0,
             text;
         text = "";
@@ -117,13 +158,59 @@ TikTok: rayyarr_
                 document.getElementById("text3").innerHTML = text3;
             }
         }
+
+        // tampil-2
+        var a = 0,
+            text4;
+        text4 = "";
+        var b = 0,
+            text5;
+        text5 = "";
+        var c = 0,
+            text6;
+        text6 = "";
+
+        function ketik2() {
+            if (a < text4.length) {
+                document.getElementById("text4").innerHTML += text4.charAt(a);
+                a++;
+                setTimeout(ketik2, 100);
+            }
+            if (a == text4.length) {
+                document.getElementById("text4").innerHTML = text4;
+                ketikk2();
+            }
+        }
+
+        function ketikk2() {
+            if (b < text5.length) {
+                document.getElementById("text5").innerHTML += text5.charAt(b);
+                b++;
+                setTimeout(ketikk2, 200);
+            }
+            if (b == text5.length) {
+                ketikkk2();
+            }
+        }
+
+        function ketikkk2() {
+            if (c < text6.length) {
+                document.getElementById("text6").innerHTML += text6.charAt(c);
+                c++;
+                setTimeout(ketikkk2, 300);
+            }
+            if (c == text6.length) {
+                document.getElementById("tampil2").style.display = "inline-block";
+                document.getElementById("text6").innerHTML = text6;
+            }
+        }
     </script>
 
     <script type="text/javascript">
         //Audio Link MP3
         function play() {
             var audio = new
-            Audio('hey.likeadream.repl.co/KandaJanganMarah.mp3');
+            Audio('hey.likeadream.repl.co/Cinta Simpul Mati.mp3');
             audio.play();
         }
 
@@ -184,47 +271,9 @@ TikTok: rayyarr_
             }
         }
 
-        function coba() {
-            $.ajax({
-                url: 'https://belajarapa.github.io/scoutskaneda.github.io/',
-                type: 'GET',
-                success: function(data) {
-                    $('#content').html($(data).find('#content').html());
-                    pilihwarna()
-                }
-            });
-        }
-
-        // $(document).on("click", "#btn-like", function(e){
-        //                  const value = e.target.previousElementSibling.getAttribute('value');
-        //                  console.log([cc]);
-        //                  $.ajax({
-        //                      url:url,
-        //                      type:"POST",
-        //                      data:{
-        //                          username:username,
-        //                          user_id:user_id,
-        //                          post_id:post_id,
-        //                          value:value,
-        //                          _token:_token,
-        //                          },
-        //                     success:function(response){
-        //                       console.log(response)
-        //                         $("#"+cc).load('/ '+'#'+cc);
-        //                     },
-        //                     sudah:function(response){
-        //                       console.log(response)
-        //                       $("#"+cc).load('/ '+'#'+cc);
-        //                     },
-        //                     error:function(error){
-        //                        console.log(JSON.stringify(error));
-        //                     }  
-        //                  }); 
-        //                  }); 
-
-
         async function pilihwarna() {
             text = "";
+            text4 = "";
             var {
                 isConfirmed: tanyadua
             } = await swals.fire({
@@ -232,8 +281,8 @@ TikTok: rayyarr_
                 imageUrl: 'https://i.postimg.cc/wjjjjvm7/saltobears.gif',
                 imageWidth: 120,
                 imageHeight: 120,
-                confirmButtonText: 'Pertama',
-                cancelButtonText: 'Kedua',
+                confirmButtonText: 'Demo',
+                cancelButtonText: 'Pendaftaran',
                 allowOutsideClick: false,
                 showCancelButton: true,
             });
@@ -242,28 +291,38 @@ TikTok: rayyarr_
                 kuis();
             } else {
                 kata2();
-                kuis();
+                kuis2();
             }
         }
 
         function kata1() {
-            text2 = "Happy Birthday Sayang....udah 15 tahun aja nichh haha, sehat terus ya sayangg, bahagia jugaa, dimudahkan urusannya... " + nama + "!       ";
-            text3 = "Semoga apa yang disemogakan tersemogakann AMIIN,,, HAPPY BIRTHDAY SAYANG " + nama + "!)       ";
+            text2 = "Hai kak " + nama + ' didewan ambalan SMK Negeri 2 Kota Mojokerto. Kakak bisa banyak belajar mulai dari cara menjadi pemimpin yang baik sampai menjadi seseorang yang disiplin';
+            text3 = "Tunggu apa lagi kak, ayo. Buruan daftar";
+            document.getElementById('text3').style = "font-weight:700";
         }
 
         function kata2() {
-            text2 = "Maaf ya sayang aku banyak kurangnya, aku susah kmu banggain tapi aku bangga milikin kmu dan tak uasahain yg terbaik untukmu   ";
-            text3 = "Aku masih ndek sini nemenin Citra kok, aku harap kmu bahagia terus sama aku   " + nama + "!       ";
-            document.getElementById('text3').style = "font-weight:700";
+            text5 = "Ingin daftar tapi belum yakin? kak " + nama + " silahkan hubungi saja kami, dengan klik daftar kakak akan dibawa untuk menghubungi noner dari  rekan kami";
+            text6 = "Buruan ya, kak";
+            document.getElementById('text6').style = "font-weight:700";
         }
         async function kuis() {
             await swalst.fire({
-                title: 'Hai, ' + nama + '!',
+                title: 'Hai kak, ' + nama + '!',
                 imageUrl: 'https://i.postimg.cc/02wF21b1/peach-goma.gif',
                 imageWidth: 120,
                 imageHeight: 120,
             });
             showDiv();
+        }
+        async function kuis2() {
+            await swalst.fire({
+                title: 'Hai kak, ' + nama + '!',
+                imageUrl: 'https://i.postimg.cc/02wF21b1/peach-goma.gif',
+                imageWidth: 120,
+                imageHeight: 120,
+            });
+            showDiv2();
         }
         mulaitanya();
     </script>
