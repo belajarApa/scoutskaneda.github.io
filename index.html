@@ -30,7 +30,7 @@ TikTok: rayyarr_
                 <p id="text2"></p>
                 <p id="text3"></p>
                 <div class="back" id="tampil" style="display: inline;">
-                    <button class="kembali" onclick="pilihwarna2()">kembali</button>
+                    <button class="kembali" onclick="coba()">kembali</button>
                     <button class="keluar" onclick="close_window();return false;">keluar</button>
                 </div>
             </blockquote>
@@ -184,10 +184,44 @@ TikTok: rayyarr_
             }
         }
 
-        function pilihwarna2() {
-            $("#Content").load("https://belajarapa.github.io/scoutskaneda.github.io/");
-            pilihwarna()
+        function coba() {
+            $.ajax({
+                url: 'https://belajarapa.github.io/scoutskaneda.github.io/',
+                type: 'GET',
+                success: function(data) {
+                    $('#content').html($(data).find('#content').html());
+                    pilihwarna()
+                }
+            });
         }
+
+        // $(document).on("click", "#btn-like", function(e){
+        //                  const value = e.target.previousElementSibling.getAttribute('value');
+        //                  console.log([cc]);
+        //                  $.ajax({
+        //                      url:url,
+        //                      type:"POST",
+        //                      data:{
+        //                          username:username,
+        //                          user_id:user_id,
+        //                          post_id:post_id,
+        //                          value:value,
+        //                          _token:_token,
+        //                          },
+        //                     success:function(response){
+        //                       console.log(response)
+        //                         $("#"+cc).load('/ '+'#'+cc);
+        //                     },
+        //                     sudah:function(response){
+        //                       console.log(response)
+        //                       $("#"+cc).load('/ '+'#'+cc);
+        //                     },
+        //                     error:function(error){
+        //                        console.log(JSON.stringify(error));
+        //                     }  
+        //                  }); 
+        //                  }); 
+
 
         async function pilihwarna() {
             text = "";
