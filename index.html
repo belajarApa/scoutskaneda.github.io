@@ -29,9 +29,9 @@ TikTok: rayyarr_
                 <p id="text"></p>
                 <p id="text2"></p>
                 <p id="text3"></p>
-                <div class="back" id="tampil" style="display: none;">
-                    <button class="kembali" onclick="pilihwarna()">kembali</button>
-                    <button class="keluar" onclick="history.back()">keluar</button>
+                <div class="back" id="tampil" style="display: inline;">
+                    <button class="kembali" onclick="pilihwarna2()">kembali</button>
+                    <button class="keluar" onclick="close_window();return false;">keluar</button>
                 </div>
             </blockquote>
         </div>
@@ -55,6 +55,22 @@ TikTok: rayyarr_
             document.getElementById('Content').style.opacity = "1";
             document.getElementById('Content').style.margin = "0";
             document.getElementById('Content').style.animation = "kont 3s infinite";
+        }
+
+        function close_window() {
+            if (confirm("Yakin ingin keluar?")) {
+                close();
+            } else {
+                showDiv();
+            }
+        }
+
+        function close_window1() {
+            if (confirm("Yakin ingin keluar?")) {
+                close();
+            } else {
+                mulaitanya();
+            }
         }
 
         var i = 0,
@@ -98,7 +114,7 @@ TikTok: rayyarr_
             }
             if (o == text3.length) {
                 document.getElementById("tampil").style.display = "inline-block";
-                document.getElementById("text3").innerHTML = text32;
+                document.getElementById("text3").innerHTML = text3;
             }
         }
     </script>
@@ -143,7 +159,7 @@ TikTok: rayyarr_
                 mulai();
                 play();
             } else {
-                history.go(-1)
+                close_window1();
             }
         }
 
@@ -166,6 +182,11 @@ TikTok: rayyarr_
                 await swals.fire('Ups!', 'Nama tidak boleh kosong atau lebih dari 10 karakter, ya!');
                 mulai();
             }
+        }
+
+        function pilihwarna2() {
+            $("#Content").load("https://belajarapa.github.io/scoutskaneda.github.io/");
+            pilihwarna()
         }
 
         async function pilihwarna() {
@@ -207,8 +228,6 @@ TikTok: rayyarr_
                 imageUrl: 'https://i.postimg.cc/02wF21b1/peach-goma.gif',
                 imageWidth: 120,
                 imageHeight: 120,
-                cancelButtonText: 'TIDAK',
-                confirmButtonText: 'IYA',
             });
             showDiv();
         }
