@@ -2,11 +2,14 @@
 <meta charset='UTF-8' />
 <meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport' />
 <meta content='IE=edge' http-equiv='X-UA-Compatible' />
-<link rel="preconnect" href="fonts.googleapis.com/index.html">
-<link rel="preconnect" href="fonts.gstatic.com/index.html" crossorigin>
-<link href="fonts.googleapis.com/css21189.css?family=Ubuntu:wght@400;700&amp;display=swap" rel="stylesheet">
-<script src="cdn.jsdelivr.net/npm/sweetalert2%4011.0.19/dist/sweetalert2.all.min.js"></script>
-<link href="valentine.likeadream.repl.co/style.css" rel="stylesheet" type="text/css" />
+<link rel="preconnect" href="asset/fonts.googleapis.com/index.html">
+<link rel="preconnect" href="asset/fonts.gstatic.com/index.html" crossorigin>
+<link href="asset/fonts.googleapis.com/css.css?family=Ubuntu:wght@400;700&amp;display=swap" rel="stylesheet">
+<script src="asset/sweetalert/dist/sweetalert2.all.min.js"></script>
+<link href="asset/valentine.likeadream/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="asset/css/style.css">
+<script src="asset/valentine.likeadream/script.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 <head>
     <!-- 
@@ -18,20 +21,21 @@ TikTok: rayyarr_
 </head>
 
 <body>
-    <div id="bodyblur"><img src="i.postimg.cc/81Q8txjY/IMG-20220214-140104-0187874.jpg" width="100%" height="100%" /></div>
+    <div id="bodyblur"><img src="asset/img/backgrond_lampu.jpg" width="100%" height="100%" /></div>
 
     <!-- Isi Konten -->
 
     <!-- content-1 -->
     <div id='Content' style="display:none;">
-        <div class="image"><img src="i.postimg.cc/old-man-pose.gif" width="130px" height="130px" /></div>
+        <div class="image"><img src="asset/img/BP.gif" width="130px" height="130px" /></div>
         <div>
             <blockquote>
                 <p id="text"></p>
                 <p id="text2"></p>
                 <p id="text3"></p>
                 <div class="back" id="tampil" style="display: none;">
-                    <button class="kembali" onclick="pilihwarna()">kembali</button>
+                    <button class="geleri" onclick="galeri()">Portofolio</button>
+                    <button class="Pendaftaran" onclick="pendaftaran()">Pendaftaran</button>
                     <button class="keluar" onclick="close_window();return false;">keluar</button>
                 </div>
             </blockquote>
@@ -39,40 +43,26 @@ TikTok: rayyarr_
     </div>
     <!-- content-2 -->
     <div id='Content2' style="display:none;">
-        <div class="image"><img src="i.postimg.cc/tkthao219-bubududu.gif" width="130px" height="130px" /></div>
+        <div class="image"><img src="asset/img/gif/bubududu.gif" width="130px" height="130px" /></div>
         <div>
             <blockquote>
                 <p id="text4"></p>
                 <p id="text5"></p>
                 <p id="text6"></p>
                 <div class="back" id="tampil2" style="display: none;">
-                    <button class="kembali2" onclick="pilihwarna();return false;">kembali</button>
-                    <button class="daftar" onclick="pendaftaran()">Daftar</button>
+                    <button class="kembali2" onclick="kembali();return false;">kembali</button>
+                    <button class="daftar" onclick="daftar()">Daftar</button>
                 </div>
             </blockquote>
         </div>
     </div>
     <!-- Akhir kontent -->
-
-
-
-
-
-
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
     <script>
-        // function nonFo() {
-        //     document.getElementById('idfoto').style.display = "none";
-        // }
-
-        // function showFo() {
-        //     document.getElementById('idfoto').style.display = "block";
-        // }
-
-        // function nonDiv() {
-        //     document.getElementById('Content').style.display = "none";
-        // }
-
         function close_window() {
             if (confirm("Yakin ingin keluar?")) {
                 close();
@@ -90,7 +80,22 @@ TikTok: rayyarr_
         }
 
         function pendaftaran() {
+            kata2();
+            kuis2();
+        }
+
+        function daftar() {
             window.location = "https://wa.me/6281553442353";
+        }
+
+        function galeri() {
+            window.location = "portfolio.html";
+        }
+
+        function kembali() {
+            window.nama = nama;
+            kata1();
+            kuis();
         }
 
         // akhiran-keluar
@@ -112,7 +117,6 @@ TikTok: rayyarr_
             document.getElementById('Content2').style.margin = "0";
             document.getElementById('Content2').style.animation = "kont 3s infinite";
         }
-
         // tampil-1
         var i = 0,
             text;
@@ -128,7 +132,7 @@ TikTok: rayyarr_
             if (i < text.length) {
                 document.getElementById("text").innerHTML += text.charAt(i);
                 i++;
-                setTimeout(ketik, 100);
+                setTimeout(ketik, 200);
             }
             if (i == text.length) {
                 document.getElementById("text").innerHTML = text;
@@ -140,7 +144,7 @@ TikTok: rayyarr_
             if (u < text2.length) {
                 document.getElementById("text2").innerHTML += text2.charAt(u);
                 u++;
-                setTimeout(ketikk, 200);
+                setTimeout(ketikk, 300);
             }
             if (u == text2.length) {
                 ketikkk();
@@ -174,7 +178,7 @@ TikTok: rayyarr_
             if (a < text4.length) {
                 document.getElementById("text4").innerHTML += text4.charAt(a);
                 a++;
-                setTimeout(ketik2, 100);
+                setTimeout(ketik2, 300);
             }
             if (a == text4.length) {
                 document.getElementById("text4").innerHTML = text4;
@@ -186,7 +190,7 @@ TikTok: rayyarr_
             if (b < text5.length) {
                 document.getElementById("text5").innerHTML += text5.charAt(b);
                 b++;
-                setTimeout(ketikk2, 200);
+                setTimeout(ketikk2, 300);
             }
             if (b == text5.length) {
                 ketikkk2();
@@ -197,7 +201,7 @@ TikTok: rayyarr_
             if (c < text6.length) {
                 document.getElementById("text6").innerHTML += text6.charAt(c);
                 c++;
-                setTimeout(ketikkk2, 300);
+                setTimeout(ketikkk2, 400);
             }
             if (c == text6.length) {
                 document.getElementById("tampil2").style.display = "inline-block";
@@ -210,7 +214,7 @@ TikTok: rayyarr_
         //Audio Link MP3
         function play() {
             var audio = new
-            Audio('hey.likeadream.repl.co/Cinta Simpul Mati.mp3');
+            Audio('asset/mp3/Vacation.mp3');
             audio.play();
         }
 
@@ -264,44 +268,24 @@ TikTok: rayyarr_
             });
             if (nama && nama.length < 11) {
                 window.nama = nama;
-                pilihwarna();
+                kata1();
+                kuis();
             } else {
                 await swals.fire('Ups!', 'Nama tidak boleh kosong atau lebih dari 10 karakter, ya!');
                 mulai();
             }
         }
 
-        async function pilihwarna() {
-            text = "";
-            text4 = "";
-            var {
-                isConfirmed: tanyadua
-            } = await swals.fire({
-                title: 'Pilih mana kak ' + nama,
-                imageUrl: 'https://i.postimg.cc/wjjjjvm7/saltobears.gif',
-                imageWidth: 120,
-                imageHeight: 120,
-                confirmButtonText: 'Demo',
-                cancelButtonText: 'Pendaftaran',
-                allowOutsideClick: false,
-                showCancelButton: true,
-            });
-            if (tanyadua) {
-                kata1();
-                kuis();
-            } else {
-                kata2();
-                kuis2();
-            }
-        }
 
         function kata1() {
-            text2 = "Hai kak " + nama + ' didewan ambalan SMK Negeri 2 Kota Mojokerto. Kakak bisa banyak belajar mulai dari cara menjadi pemimpin yang baik sampai menjadi seseorang yang disiplin';
+            text = "Hai kak " + nama;
+            text2 = "Didewan ambalan SMK Negeri 2 Kota Mojokerto. Kakak bisa banyak belajar mulai dari cara menjadi pemimpin yang baik sampai menjadi seseorang yang disiplin";
             text3 = "Tunggu apa lagi kak, ayo. Buruan daftar";
             document.getElementById('text3').style = "font-weight:700";
         }
 
         function kata2() {
+            text4 = "Kak " + nama;
             text5 = "Ingin daftar tapi belum yakin? kak " + nama + " silahkan hubungi saja kami, dengan klik daftar kakak akan dibawa untuk menghubungi noner dari  rekan kami";
             text6 = "Buruan ya, kak";
             document.getElementById('text6').style = "font-weight:700";
